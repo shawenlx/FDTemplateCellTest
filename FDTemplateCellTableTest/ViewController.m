@@ -109,8 +109,9 @@ static NSString *cellIdentifier = @"cell";
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedRowHeight = 100;
+        //iOS8以后可以用下面的方法，但是其实效率不是特别高
+//        _tableView.rowHeight = UITableViewAutomaticDimension;
+//        _tableView.estimatedRowHeight = 100;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerClass:[MyTableViewCell class] forCellReuseIdentifier:cellIdentifier];
